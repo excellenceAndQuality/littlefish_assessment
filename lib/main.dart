@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:littlefish_assessment/home_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:littlefish_assessment/blocs/number_bloc.dart';
+import 'package:littlefish_assessment/pages/home_page.dart';
+import 'package:littlefish_assessment/styles/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,15 +11,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Littlefish Assessment',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BlocProvider<NumberBloc>(
+      create: (context) => NumberBloc(),
+      child: MaterialApp(
+        title: 'Littlefish Assessment',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+        ),
+        home: const HomePage(),
       ),
-      home: const HomePage(),
     );
   }
 }
