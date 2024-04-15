@@ -12,13 +12,17 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  flutter_bloc: ^8.1.5
+  http: ^0.13.6
+  provider: ^6.1.2
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
-  flutter_bloc: ^8.1.5
+
 
 flutter:
 

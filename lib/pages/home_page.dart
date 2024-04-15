@@ -11,20 +11,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: CustomColors.primaryColour,
         elevation: 0,
         title: const Text(
-          "Littlefish Assessment",
+          "Question 3",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
         ),
       ),
       backgroundColor: CustomColors.primaryColour,
       body: const Center(
-        child: Text(
-          "This is the main branch",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.w100
-          ),
-        ),
+
       ),
 
     );

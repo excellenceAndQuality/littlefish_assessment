@@ -10,5 +10,4 @@ class CustomColors {
   static const green = Color(0xFF059B00);
   static const deepGreen = Color(0xFF023A00);
 
-
 }
