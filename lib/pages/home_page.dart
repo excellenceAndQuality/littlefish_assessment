@@ -11,6 +11,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: CustomColours.primaryColour,
+        elevation: 0,
+        title: const Text(
+          "Question 1",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
+        ),
+      ),
       backgroundColor: CustomColours.primaryColour,
       body: BlocBuilder<NumberBloc, NumberStates>(
         builder: (context, state) {
