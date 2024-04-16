@@ -13,6 +13,8 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  connectivity_plus: ^5.0.1
+  data_connection_checker: ^0.3.4
   connectivity_plugin:
     path: connectivity_plugin
 

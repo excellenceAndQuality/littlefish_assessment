@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:littlefish_assessment/pages/home_page_two.dart';
 import 'pages/home_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const HomaPageTwo(),
     );
   }
 }
