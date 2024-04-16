@@ -1,8 +1,44 @@
+import 'dart:async';
+
+import 'package:connectivity_plugin/connectivity_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:littlefish_assessment/styles/colors.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+
+  bool _isConnected = true;
+  late StreamSubscription<bool> _connectivitySubscription;
+
+  @override
+  void initState() {
+    super.initState();
+
+    ConnectivityPlugin.isConnected().then((isConnected) {
+      setState(() {
+        _isConnected = isConnected;
+      });
+    });
+
+    _connectivitySubscription = ConnectivityPlugin.onConnectivityChanged.listen((isConnected) {
+      setState(() {
+        _isConnected = isConnected;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _connectivitySubscription.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,22 +47,19 @@ class HomePage extends StatelessWidget {
         backgroundColor: CustomColors.primaryColour,
         elevation: 0,
         title: const Text(
-          "Littlefish Assessment",
+          "Question 4",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
         ),
       ),
       backgroundColor: CustomColors.primaryColour,
-      body: const Center(
+      body: Center(
         child: Text(
-          "This is the main branch",
-          style: TextStyle(
+          _isConnected ? 'Connected to the internet' : 'No internet connection',
+          style: const TextStyle(
               color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.w100
-          ),
+              fontSize: 20),
         ),
       ),
-
     );
   }
 }

@@ -1,4 +1,7 @@
 include ':app'
+include ':connectivity_plugin'
+
+project(':connectivity_plugin').projectDir = new File('../connectivity_plugin/android')
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
 def properties = new Properties()
